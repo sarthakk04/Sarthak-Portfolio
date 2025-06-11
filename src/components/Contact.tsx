@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Mail, MapPin, Phone } from "lucide-react";
 import { personalInfo } from "../data/profile";
+import DecryptedText from "./dectext/DecryptedText";
+import BlurText from "./blurtext/BlurText";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -64,10 +66,25 @@ const Contact: React.FC = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-16"
         >
-          <h2 className="section-heading inline-block mx-auto">Get In Touch</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Have a project in mind or want to collaborate? Feel free to reach
-            out.
+          <div
+            style={{ width: "100%", display: "flex", justifyContent: "center" }}
+          >
+            <BlurText
+              text="Get In Touch"
+              delay={120}
+              animateBy="letters"
+              direction="top"
+              className="section-heading text-white "
+            />
+          </div>
+          <p className="text-gray-400 max-w-2xl mx-auto mt-4 font-light leading-relaxed">
+            <DecryptedText
+              text="Have a project in mind or want to collaborate? Feel free to reach out."
+              speed={110}
+              characters="01234!?"
+              animateOn="view"
+              revealDirection="center"
+            />
           </p>
         </motion.div>
 
