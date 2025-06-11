@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { personalInfo, socials } from "../data/profile";
-import profile from "../assets/profile.jpg";
+// import profile from "../assets/profile.jpg";
+import avt from "../assets/avatar.png";
 import DecryptedText from "./dectext/DecryptedText";
+import ProfileCard from "./ProfileCard/ProfileCard";
 
 const iconComponents: Record<string, React.ReactNode> = {
   github: <Github className="w-5 h-5" />,
@@ -167,12 +169,23 @@ const Hero: React.FC = () => {
           >
             <div className="relative group">
               <div className="w-full h-80 md:h-96 lg:h-[38rem] relative rounded-2xl overflow-hidden border border-gray-700/30">
-                <img
-                  src={profile}
-                  // alt={personalInfo.name}
-                  className="w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-105"
-                  loading="eager"
-                  fetchPriority="high"
+                {/* <img
+                    src={profile}
+                    // alt={personalInfo.name}
+                    className="w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-105"
+                    loading="eager"
+                    fetchPriority="high"
+                  /> */}
+                <ProfileCard
+                  name="Sarthak Shinde"
+                  title="Developer"
+                  handle="___.sarthakkk.___"
+                  status="Online"
+                  contactText="Contact Me"
+                  avatarUrl={avt}
+                  showUserInfo={true}
+                  enableTilt={true}
+                  onContactClick={() => console.log("Contact clicked")}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background-dark/60 via-transparent to-transparent opacity-50 group-hover:opacity-60 transition-all duration-500" />
               </div>
