@@ -168,7 +168,7 @@ const Hero: React.FC = () => {
             style={{ scale }}
           >
             <div className="relative group">
-              <div className="w-full h-80 md:h-96 lg:h-[38rem] relative rounded-2xl overflow-hidden border border-gray-700/30">
+              <div className="w-full h-120 md:h-96 lg:h-[38rem] relative rounded-2xl overflow-hidden border border-gray-700/30">
                 {/* <img
                     src={profile}
                     // alt={personalInfo.name}
