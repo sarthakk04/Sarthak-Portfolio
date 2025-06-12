@@ -9,6 +9,10 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+  const handleOpenLink = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <motion.div
       className="glass-card rounded-xl overflow-hidden card-hover group relative"
@@ -30,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           loading="eager"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background-dark/70 via-transparent to-transparent opacity-50 transition-all duration-500" />
+        <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-background-dark/70 via-transparent to-transparent opacity-50 transition-all duration-500" />
       </div>
 
       <div className="p-6">
@@ -61,46 +65,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           ))}
         </div>
 
-        {/* GitHub and Live Demo buttons inside links */}
-        <div className="flex space-x-4 mt-4">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer"
-            >
-              <motion.button
-                className="group/link relative p-3 rounded-full bg-background-light/10 text-white hover:text-primary-500"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+        {/* Updated plain buttons */}
+        <div className="  relative z-10">
+          <div className="flex space-x-4 mt-4">
+            {project.github && (
+              <button
+                onClick={() => handleOpenLink(project.github!)}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-background-light/10 text-white hover:text-primary-500 hover:bg-primary-500/10 transition-all duration-300"
               >
-                <span className="relative z-10">
-                  <Github className="w-5 h-5" />
-                </span>
-                <span className="absolute inset-0 rounded-full bg-primary-500/10 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
-              </motion.button>
-            </a>
-          )}
-          {project.liveDemo && (
-            <a
-              href={project.liveDemo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer"
-            >
-              <motion.button
-                className="group/link relative p-3 rounded-full bg-background-light/10 text-white hover:text-primary-500"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                <Github className="w-5 h-5" />
+                <span className="text-sm font-medium">GitHub</span>
+              </button>
+            )}
+            {project.liveDemo && (
+              <button
+                onClick={() => handleOpenLink(project.liveDemo!)}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-background-light/10 text-white hover:text-primary-500 hover:bg-primary-500/10 transition-all duration-300 cursor-pointer"
               >
-                <span className="relative z-10">
-                  <ExternalLink className="w-5 h-5" />
-                </span>
-                <span className="absolute inset-0 rounded-full bg-primary-500/10 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
-              </motion.button>
-            </a>
-          )}
+                <ExternalLink className="w-5 h-5" />
+                <span className="text-sm font-medium">Live Preview</span>
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
