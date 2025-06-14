@@ -2,6 +2,10 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+    },
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
@@ -18,7 +22,7 @@ export default {
           200: "#C4F7FF",
           300: "#9FF2FF",
           400: "#4EAEFF",
-          500: "#3D8BFF",
+          500: "#4EEAFF", // fixed mismatch with DEFAULT
           600: "#36C2D9",
           700: "#259AB3",
           800: "#17738C",

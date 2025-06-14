@@ -1,14 +1,44 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
-import achievements from "../data/achievements";
+import { CalendarDays } from "lucide-react";
 import DecryptedText from "./dectext/DecryptedText";
 import BlurText from "./blurtext/BlurText";
 
-const Achievements: React.FC = () => {
+const timelineData = [
+  {
+    year: "2021 - 2024",
+    title: "Diploma in Computer Technology",
+    description:
+      "Completed Diploma with technical foundation in software development and computer systems.",
+  },
+  {
+    year: "Jan 2024 - Mar 2024",
+    title: "MERN Stack Internship",
+    organization: "Sumago Infotech Pvt Ltd",
+    description:
+      "Worked as a MERN stack intern, developing full-stack applications and learning real-world project workflows.",
+  },
+  {
+    year: "Apr 2024 - Feb 2025",
+    title: "Junior Full Stack Developer",
+    organization: "NetLeap IT Training and Solutions",
+    description:
+      "Developing production-level web apps using React, Node.js, and Firebase with a strong focus on UI/UX.",
+  },
+  {
+    year: "Sep 2024 - Ongoing",
+    title: "B.E. 3rd Year - Information Technology",
+    organization: "DY Patil College of Engineering",
+    description:
+      "Pursuing Bachelor’s in IT with specialization in Software Engineering, AI, and Full Stack development.",
+  },
+];
+
+const Timeline: React.FC = () => {
   return (
-    <section id="achievements" className="py-20 relative overflow-hidden">
-      <div className="absolute bottom-1/3 right-1/4 w-1/3 h-1/3 bg-glow-gradient opacity-15 blur-3xl"></div>
+    <section id="timeline" className="py-20 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[50vw] h-[50vw] bg-glow-gradient opacity-10 blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -18,21 +48,18 @@ const Achievements: React.FC = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-16"
         >
-          <div
-            style={{ width: "100%", display: "flex", justifyContent: "center" }}
-          >
+          <div className="flex justify-center">
             <BlurText
-              text="Achievements"
+              text="Timeline"
               delay={120}
               animateBy="letters"
               direction="top"
-              className="section-heading text-white "
+              className="section-heading text-white"
             />
           </div>
-
           <p className="text-gray-400 max-w-2xl mx-auto mt-4 font-light leading-relaxed">
             <DecryptedText
-              text="Recognitions and certifications that I've earned throughout my career."
+              text="A glimpse of my academic and professional journey from 2021 to present."
               speed={110}
               characters="01234!?"
               animateOn="view"
@@ -41,42 +68,33 @@ const Achievements: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {achievements.map((achievement, index) => (
+        <div className="relative border-l border-primary-500 pl-6 md:pl-12 space-y-16">
+          {timelineData.map((item, index) => (
             <motion.div
-              key={achievement.id}
-              className="bg-card-gradient backdrop-blur-sm rounded-xl overflow-hidden border border-gray-800 flex flex-col md:flex-row card-hover"
-              initial={{ opacity: 0, y: 50 }}
+              key={index}
+              className="group relative"
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
             >
-              {achievement.image && (
-                <div className="md:w-2/5 relative">
-                  <img
-                    src={achievement.image}
-                    alt={achievement.title}
-                    className="w-full h-40 md:h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-transparent to-transparent md:bg-gradient-to-tr"></div>
-                </div>
-              )}
+              {/* Circle marker */}
+              <span className="absolute -left-4 md:-left-6 top-1 w-3.5 h-3.5 rounded-full bg-primary-500 group-hover:scale-125 transition-transform duration-300" />
 
-              <div
-                className={`p-6 ${achievement.image ? "md:w-3/5" : "w-full"}`}
-              >
-                <div className="flex items-center mb-3">
-                  <Award className="w-5 h-5 text-primary-500 mr-2" />
-                  <p className="text-secondary-400 text-sm">
-                    {achievement.organization} • {achievement.date}
-                  </p>
+              <div className="bg-card-gradient backdrop-blur-md border border-gray-800 rounded-xl p-6 hover:shadow-lg transition-all duration-500 hover:border-primary-500">
+                <div className="flex items-center mb-2 text-sm text-secondary-400">
+                  <CalendarDays className="w-4 h-4 mr-2 text-primary-500" />
+                  {item.year}
                 </div>
-
-                <h3 className="text-xl font-bold mb-2 text-white">
-                  {achievement.title}
+                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-primary-500 transition-colors duration-300">
+                  {item.title}
                 </h3>
-
-                <p className="text-gray-400">{achievement.description}</p>
+                {item.organization && (
+                  <p className="text-sm text-gray-400 mb-2 font-medium">
+                    {item.organization}
+                  </p>
+                )}
+                <p className="text-gray-400 font-light">{item.description}</p>
               </div>
             </motion.div>
           ))}
@@ -86,4 +104,4 @@ const Achievements: React.FC = () => {
   );
 };
 
-export default Achievements;
+export default Timeline;
