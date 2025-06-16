@@ -122,10 +122,10 @@ const Hero: React.FC = () => {
             </motion.p>
 
             <motion.div
-              className="flex space-x-4 mb-8"
+              className="flex flex-wrap items-center gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
             >
               {socials.map((social) => (
                 <motion.a
@@ -145,19 +145,47 @@ const Hero: React.FC = () => {
                 </motion.a>
               ))}
             </motion.div>
-
-            <motion.a
-              href="#contact"
-              className="group relative inline-block bg-gradient-to-r from-primary-500/80 to-secondary-500/80 backdrop-blur-sm text-background-dark font-medium py-3 px-8 rounded-full overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <motion.div
+              className="flex flex-wrap items-center gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
             >
-              <span className="relative z-10 text-white">Get In Touch</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-secondary-500/80 to-primary-500/80 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-            </motion.a>
+              {/* Get In Touch Button */}
+              <motion.a
+                href="#contact"
+                className="group inline-flex items-center justify-center px-6 py-3 rounded-full font-medium bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:brightness-110 transition-all duration-300 shadow-md"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get In Touch
+              </motion.a>
+
+              {/* Download Resume Button */}
+              <motion.a
+                href="https://drive.google.com/file/d/1qOo_vh7qISjHWXhsSo2i6Ko5PEczCTzV/view?usp=sharing"
+                download
+                target="_blank"
+                className="group inline-flex items-center justify-center px-6 py-3 rounded-full font-medium border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300 shadow-md"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg
+                  className="w-5 h-5 mr-2 transition-colors duration-300 group-hover:fill-white group-hover:text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"
+                  />
+                </svg>
+                Download Resume
+              </motion.a>
+            </motion.div>
           </motion.div>
 
           <motion.div

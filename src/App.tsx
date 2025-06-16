@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { motion } from "framer-motion";
 // import GooeyNav from "./components/GooeyNav/gooeynav";
 
 function App() {
@@ -22,11 +23,18 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background-dark text-white">
-      <AnimatedCursor />
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1.3 }}
+      >
+        <div className="min-h-screen bg-background-dark text-white">
+          <AnimatedCursor />
 
-      <Navbar />
-      {/* <div
+          <Navbar />
+          {/* <div
         style={{
           width: "100%",
           display: "flex",
@@ -44,15 +52,17 @@ function App() {
           colors={[1, 2, 3, 1, 2, 3, 1, 4]}
         />
       </div> */}
-      <main>
-        <Hero />
-        <Projects />
-        <Skills />
-        <Achievements />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+          <main>
+            <Hero />
+            <Projects />
+            <Skills />
+            <Achievements />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </motion.div>
+    </>
   );
 }
 
