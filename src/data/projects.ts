@@ -20,8 +20,8 @@ const projects: Project[] = [
     image:
       "https://images.pexels.com/photos/12883026/pexels-photo-12883026.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
     tags: ["React", "TailwindCSS", "Framer Motion", "TypeScript"],
-    github: "https://github.com/yourusername/portfolio",
-    liveDemo: "https://yourportfolio.com",
+    github: "https://github.com/sarthakk04",
+    liveDemo: "https://sarthak-portfolio-chi.vercel.app/",
   },
   {
     id: 3,
