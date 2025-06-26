@@ -4,6 +4,7 @@ import projects from "../data/projects";
 import ProjectCard from "./ProjectCard";
 import DecryptedText from "./dectext/DecryptedText";
 import BlurText from "./blurtext/BlurText";
+import Tilt from "react-parallax-tilt";
 
 const Projects: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -77,7 +78,17 @@ const Projects: React.FC = () => {
           style={{ scale }}
         >
           {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+            <Tilt
+              key={project.id}
+              glareEnable={true}
+              glareMaxOpacity={0.1}
+              scale={1.02}
+              glareColor="#ffffff"
+              glarePosition="all"
+              className="rounded-xl"
+            >
+              <ProjectCard project={project} index={index} />
+            </Tilt>
           ))}
         </motion.div>
 

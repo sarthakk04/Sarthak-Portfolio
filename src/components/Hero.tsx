@@ -122,6 +122,7 @@ const Hero: React.FC = () => {
             </motion.p>
 
             <motion.div
+              style={{ position: "relative", top: "-15px" }}
               className="flex flex-wrap items-center gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
