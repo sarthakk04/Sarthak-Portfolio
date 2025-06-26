@@ -122,12 +122,14 @@ const Gallery: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              onClick={() => setActiveItem(null)} // Close on background click
             >
               <motion.div
                 className="bg-background-dark border border-gray-700 rounded-lg overflow-hidden shadow-lg relative max-w-3xl w-full"
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()} // Prevent background click from firing when clicking modal
               >
                 <button
                   className="absolute top-3 right-3 text-white hover:text-red-400 transition-colors"

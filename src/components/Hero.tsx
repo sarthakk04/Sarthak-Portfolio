@@ -228,21 +228,30 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Enhanced scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-        style={{ opacity }}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+      <a
+        href="#projects"
+        className="flex flex-col items-center cursor-pointer group"
       >
-        <span className="text-sm text-gray-400 mb-2">Scroll Down</span>
-        <div className="w-5 h-10 border-2 border-gray-400/50 rounded-full flex justify-center backdrop-blur-sm overflow-hidden">
-          <motion.div
-            className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2"
-            animate={{ y: [0, 20, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          />
-        </div>
-      </motion.div>
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+          style={{ opacity }}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+        >
+          <span className="text-sm text-gray-400 mb-2">Scroll Down</span>
+          <div className="w-5 h-10 border-2 border-gray-400/50 rounded-full flex justify-center backdrop-blur-sm overflow-hidden">
+            <motion.div
+              className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2"
+              animate={{ y: [0, 20, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.5,
+                ease: "easeInOut",
+              }}
+            />
+          </div>
+        </motion.div>
+      </a>
     </section>
   );
 };
