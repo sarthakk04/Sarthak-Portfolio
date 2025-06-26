@@ -11,6 +11,7 @@ import Gallery from "./components/Gallery";
 import { NavbarDemo } from "./components/navbaracternity";
 import HandLoader from "./components/loader/HandLoader"; // 👈 Import your loader
 import { motion } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -54,6 +55,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
+        <Analytics />
       </div>
     </motion.div>
   );
