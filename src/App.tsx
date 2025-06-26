@@ -8,6 +8,8 @@ import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { motion } from "framer-motion";
+import Gallery from "./components/Gallery";
+import { NavbarDemo } from "./components/navbaracternity";
 // import GooeyNav from "./components/GooeyNav/gooeynav";
 
 function App() {
@@ -32,8 +34,8 @@ function App() {
       >
         <div className="min-h-screen bg-background-dark text-white">
           <AnimatedCursor />
-
-          <Navbar />
+          <NavbarDemo />
+          {/* <Navbar /> */}
           {/* <div
         style={{
           width: "100%",
@@ -53,10 +55,11 @@ function App() {
         />
       </div> */}
           <main>
-            <Hero />
+            {/* <Hero /> */}
             <Projects />
             <Skills />
             <Achievements />
+            <Gallery />
             <Contact />
           </main>
           <Footer />

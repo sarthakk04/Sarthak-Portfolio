@@ -162,7 +162,7 @@ const Hero: React.FC = () => {
               </motion.a>
 
               {/* Download Resume Button */}
-              <motion.a
+              {/* <motion.a
                 href="https://drive.google.com/file/d/1qOo_vh7qISjHWXhsSo2i6Ko5PEczCTzV/view?usp=sharing"
                 download
                 target="_blank"
@@ -184,7 +184,7 @@ const Hero: React.FC = () => {
                   />
                 </svg>
                 Download Resume
-              </motion.a>
+              </motion.a> */}
             </motion.div>
           </motion.div>
 

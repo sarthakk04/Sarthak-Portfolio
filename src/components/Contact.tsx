@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-background-light relative overflow-hidden"
+      className="py-20 bg-background-dark relative overflow-hidden"
     >
       <div className="absolute top-1/3 left-1/4 w-1/3 h-1/3 bg-glow-gradient opacity-20 blur-3xl"></div>
 
