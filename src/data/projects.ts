@@ -33,7 +33,7 @@ const projects: Project[] = [
     image: pika,
     tags: ["Python", "NextJS", "Firebase", "NodeJS"],
     github: "https://github.com/sarthakk04/PikaProjects",
-    liveDemo: "https://vercel.com/sarthaks-projects-60a9306f/pika-projects",
+    liveDemo: "https://pika-projects.vercel.app/",
   },
   {
     id: 4,
