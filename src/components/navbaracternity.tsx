@@ -50,7 +50,7 @@ export function NavbarDemo() {
             {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
             <NavbarButton
               variant="custom"
-              href="https://drive.google.com/file/d/1qOo_vh7qISjHWXhsSo2i6Ko5PEczCTzV/view?usp=sharing"
+              href="https://drive.google.com/file/d/1jtk7Gl3fqljNYyLLhj_QoBd3Kvvi75kx/view?usp=sharing"
               download
               target="_blank"
             >
