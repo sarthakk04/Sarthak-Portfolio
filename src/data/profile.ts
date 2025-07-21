@@ -1,5 +1,5 @@
 import { Social, NavLink } from "../types";
-import profile from "../assets/profile.jpg";
+import profile from "../assets/profile.png";
 
 export const personalInfo = {
   name: ["Sarthak Shinde", "Developer", "Learner", "Dreamer"],
