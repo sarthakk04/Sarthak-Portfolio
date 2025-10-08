@@ -12,6 +12,7 @@ import { NavbarDemo } from "./components/navbaracternity";
 import HandLoader from "./components/loader/HandLoader"; // 👈 Import your loader
 import { motion } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
+import Chatbot from "./components/ChatBot";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -53,6 +54,7 @@ function App() {
           <Achievements />
           <Gallery />
           <Contact />
+          <Chatbot />
         </main>
         <Footer />
         <Analytics />
