@@ -8,11 +8,15 @@ export interface Project {
   liveDemo?: string;
 }
 
+export type SkillCategory = "Frontend" | "Backend" | "Database" | "Tools" | "Languages";
+
 export interface Skill {
   name: string;
-  level: number;
-  icon: string;
+  category: SkillCategory;
+  level: number; // Kept for legacy/sorting, but hidden in UI
+  iconSlug: string; // Slug for simpleicons.org
   color: string;
+  description: string;
 }
 
 export interface Achievement {
