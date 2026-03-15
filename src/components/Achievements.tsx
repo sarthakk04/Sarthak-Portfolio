@@ -38,7 +38,7 @@ const timelineData = [
       "Pursuing Bachelor’s in IT with specialization in Software Engineering, AI, and Full Stack development.",
   },
   {
-    year: "Oct 2025 - Ongoing",
+    year: "Oct 2025 - Feb 2026",
     title: "Software Engineering Interns",
     type: "work",
     organization: "New Big Tools",
